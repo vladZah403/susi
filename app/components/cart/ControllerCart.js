@@ -24,8 +24,8 @@ export default class ControllerCart{
         this.publish('GET_PRODUCTS_TO_CART', ids)
         
     }
-    handleGetProducts = (data) =>{
-        console.log(data)
+    handleGetProducts = (products) =>{
+        console.log(products)
         this.view.renderModal();
     }
 }

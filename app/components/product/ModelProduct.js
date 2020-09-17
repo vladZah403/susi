@@ -26,7 +26,6 @@ export default class ModelProduct{
                 }
                 this.data[id][this.cellHaders[name]] = element;
             });;
-            console.log(this.data)
             return this.data
             
         });
@@ -35,7 +34,7 @@ export default class ModelProduct{
 
    getProductsByIds(ids){
        console.log(this.data)
-       return this.data.filter(data =>{ ids.includes(data.id);})
+       return []
    }
 
     

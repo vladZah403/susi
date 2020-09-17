@@ -22,7 +22,7 @@ export default class ModelCart{
         return sum
     }
     getCartProdId(){
-        console.log([...this.cart.keys()]);
+        return ([...this.cart.keys()]);
 
     }
 }

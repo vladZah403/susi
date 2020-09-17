@@ -4,7 +4,7 @@ import  ViewProduct  from "./ViewProduct.js";
 export default class ControllerProduct{
  constructor({publish, subscribe}){
  
-     this.modal = new ModelProduct();
+     this.model = new ModelProduct();
      this.view = new ViewProduct(this.handleSearch);
 
     this.publish = publish;
@@ -14,7 +14,7 @@ export default class ControllerProduct{
 
 
 
-     this.modal.loadArticles().then(data => this.view.renderArticles(data));
+     this.model.loadArticles().then(data => this.view.renderArticles(data));
  }
 
  handleSearch = ev => {
@@ -28,8 +28,8 @@ export default class ControllerProduct{
     }
  }
  handleGetProducts = (ids) =>{
-const datas = this.model.getProductsByIds(ids)
-this.publish('SET_PRODUCTS_TO_CART', datas)
+const products = this.model.getProductsByIds(ids)
+this.publish('SET_PRODUCTS_TO_CART', products)
 
  }
 }
