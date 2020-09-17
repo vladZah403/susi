@@ -43,25 +43,71 @@
   <div class="modal_r close_r" >
     
   </div>
-<footer class="page-footer font-small pt-4" style="background-color: black;">
-  <div class="container">
-    <ul class="list-unstyled list-inline text-center py-2">
-      <li class="list-inline-item">
-        <h5 class="mb-1 text-white">Register for free</h5>
-      </li>
-      <li class="list-inline-item ">
-        <a href="#" class="btn btn-outline-white btn-rounded text-white">Sign up!</a>
-      </li>
-    </ul>
-  </div>
-  <div class="footer-copyright text-center py-3 text-white">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-  </div>
-</footer>
+  <footer class="page-footer font-small teal pt-4 color">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 p-5 text-center">
+          <h5> <i class="fas fa-home mr-3"></i> Магазин на Победе: бульвар Славы, 5К</h5>
+          <hr class="deep-purple accent-2 mb-1 mt-1 d-inline-block mx-auto text-center" style="width: 80px;">
+          <p><i class="fas fa-phone mr-3"></i> +38 (095) 148-18-48</p>
+          <div id="map"></div>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-6 mb-md-0 p-5 text-center">
+          <h5> <i class="fas fa-home mr-3"></i> Магазин на Солнечном: ул. Малиносвкого,14 </h5>
+          <hr class="deep-purple accent-2 mb-1 mt-1 d-inline-block mx-auto" style="width: 80px;">
+          <p><i class="fas fa-phone mr-3"></i> +38 (063) 446-34-40</p>
+          <div id="map2"></div>
+        </div>
+      </div>
+    </div>
+      
+    <div class="container ">
+      <hr class="deep-purple accent-2 mb-1 mt-1 d-inline-block mx-auto w-100" >
+  
+      <div class="row py-4 d-flex align-items-center">
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">© 2020 Copyright: </h6>
+        </div>
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+          <a class="fb-ic" href="https://www.facebook.com/niamniamsushi/">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <a class="ins-ic" href="https://www.instagram.com/niamniamsushi/">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
       <script src="app/main.js" type="module" ></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-     
+<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+<script type="text/javascript">
+  let map;
+
+  DG.then(function () {
+      map = DG.map('map', {
+          center: [48.414192, 35.069238],
+          zoom: 20
+      });
+
+      DG.marker([48.414192, 35.069238]).addTo(map);
+  });
+</script>
+<script type="text/javascript">
+  let map2;
+
+  DG.then(function () {
+      map = DG.map('map2', {
+          center: [48.481418, 35.067987],
+          zoom: 20
+      });
+
+      DG.marker([48.481418, 35.067987]).addTo(map);
+  });
+</script>
 </body>
 </html>

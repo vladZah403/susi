@@ -1,4 +1,4 @@
-export class ViewProduct{
+export default class ViewProduct{
    constructor(handleS){
        this.articles = document.querySelector('.articles');
        this.inputSearch = document.querySelector('.inp-search');

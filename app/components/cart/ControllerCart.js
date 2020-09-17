@@ -2,13 +2,15 @@ import ModelCart from "./ModelCart.js";
 import ViewCart from "./ViewCart.js";
 
 export default class ControllerCart{
-    constructor({subscribe}){
+    constructor({subscribe, publish}){
 
         this.model = new ModelCart()
         this.view = new ViewCart(this.handleOpenModal)
 
         this.subscribe = subscribe;
+        this.publish = publish;
         this.subscribe('ADD_TO_CART', this.handleAddToCart);
+        this.subscribe('SET_PRODUCTS_TO_CART', this.handleGetProducts);
     }
 
     handleAddToCart = (id) => {
@@ -16,8 +18,14 @@ export default class ControllerCart{
         console.log(`add to cart id: ${id}`)
         this.view.renderCartCaunt(count)
     }
-    
+
     handleOpenModal =()=>{
-        this.view.renderModal()
+        const ids = this.model.getCartProdId();
+        this.publish('GET_PRODUCTS_TO_CART', ids)
+        
+    }
+    handleGetProducts = (data) =>{
+        console.log(data)
+        this.view.renderModal();
     }
 }

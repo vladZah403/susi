@@ -1,5 +1,5 @@
 
-import{ControllerProduct} from './components/product/ControllerProduct.js';
+import ControllerProduct from './components/product/ControllerProduct.js';
 import Publisher from './components/helpers/publisher.js';
 import ControllerCart from './components/cart/ControllerCart.js';
 

@@ -1,13 +1,18 @@
-import { ModelProduct } from "./ModelProduct.js";
-import { ViewProduct } from "./ViewProduct.js";
+import ModelProduct  from "./ModelProduct.js";
+import  ViewProduct  from "./ViewProduct.js";
 
-export class ControllerProduct{
- constructor({publish}){
+export default class ControllerProduct{
+ constructor({publish, subscribe}){
  
      this.modal = new ModelProduct();
      this.view = new ViewProduct(this.handleSearch);
 
-    this.publish = publish
+    this.publish = publish;
+    this.subscribe = subscribe;
+
+    this.subscribe('GET_PRODUCTS_TO_CART', this.handleGetProducts)
+
+
 
      this.modal.loadArticles().then(data => this.view.renderArticles(data));
  }
@@ -21,6 +26,11 @@ export class ControllerProduct{
         console.log(`Купили ${id}`)
         this.publish('ADD_TO_CART', id)
     }
+ }
+ handleGetProducts = (ids) =>{
+const datas = this.model.getProductsByIds(ids)
+this.publish('SET_PRODUCTS_TO_CART', datas)
+
  }
 }
 

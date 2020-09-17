@@ -1,4 +1,4 @@
-export class ModelProduct{
+export default class ModelProduct{
     cellHaders =[
         'id',
         'Title',
@@ -26,13 +26,17 @@ export class ModelProduct{
                 }
                 this.data[id][this.cellHaders[name]] = element;
             });;
+            console.log(this.data)
             return this.data
             
         });
         localStorege.setItem('products', JSON.stringify(this.data))
     }
 
-   
+   getProductsByIds(ids){
+       console.log(this.data)
+       return this.data.filter(data =>{ ids.includes(data.id);})
+   }
 
     
 
