@@ -6,7 +6,9 @@ export default class ModelProduct{
         'Prise',
         'Photo',
         'Weight',
-
+        'Categori',
+        'id2'
+        
         ];
         link = 'https://spreadsheets.google.com/feeds/cells/1lW3KL0zJgyQPNUWOT_FR3zL9VkT99tEDO1O2KzcmB3w/1/public/full?alt=json';
         data = [];
@@ -33,8 +35,8 @@ export default class ModelProduct{
     }
 
    getProductsByIds(ids){
-       console.log(this.data)
-       return []
+       console.log()
+       return this.data.filter(product => ids.includes(product.id))
    }
 
     
