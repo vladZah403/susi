@@ -1,0 +1,19 @@
+.cart{
+    cursor: pointer;
+}
+.close_r{
+    display: none;
+}
+.modal_r{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    background-color: rgba(167, 168, 168, 0.445);
+    margin-top: 70px;
+}
+.inp_product_cart{
+    width: 50px;
+}
